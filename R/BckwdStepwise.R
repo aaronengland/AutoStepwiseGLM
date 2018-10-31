@@ -219,8 +219,9 @@ backwd_stepwise_glm = function(data, dv, aic_wt=1, r_wt=1, mae_wt=1, r_squ_wt=1,
   plot(Avg_Rank_vector, type="o", col="blue", ylim=c(ymin, ymax), ylab='Avg. Weighted Rank', xlab='Model Number',
        main = print(paste('Model', best_model, 'has the lowest weighted average rank (lower is better)\n amongst model evaluation metrics')))
 
-  # print out a statement that says what the best model is
-  return(noquote(paste('Overall, model', best_model, 'performed best by using the formula:', model_formulas_vector[best_model])))
+  # Build the model with the best score and return it, so the user can call summary
+  model = glm(paste(model_formulas_vector[best_model]), data = dt_train, family = gaussian(link = 'identity'))
+  return(model)
 }
 
 
