@@ -7,7 +7,7 @@
 #' average ranking among the metrics is displayed (along with its formula). By default, metrics are all given the same
 #' relative importance (i.e., weights) when calculating average model metric rank, but if the user desires to give more
 #' weight to one or more metrics than the others they can specify these weights as arguments (default for weights is 1).
-#' As of 10/10/18, only the family = gauissian(link = 'identity') argument is provided within the glm function.
+#' As of v 0.2.0, only the family = gauissian(link = 'identity') argument is provided within the glm function.
 
 #' @param data A dataframe with one column as the dependent variable and the others as independent variables
 #' @param dv The column name of the (continuous) dependent variable (must be in quotes, i.e., 'Dependent_Variable')
